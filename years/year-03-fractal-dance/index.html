@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 03 - Geometría en Movimiento & Danza</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 03 / 22</span>
+  </nav>
+
+  <main class="dance-container">
+    <header class="dance-header">
+      <h1>✧ Geometría en Movimiento ✧</h1>
+      <p>La arquitectura matemática de la música y su reflejo fractal en el cuerpo en danza</p>
+    </header>
+
+    <div class="dance-layout">
+      <!-- Lienzo del Fractal / Geometría Corporal -->
+      <section class="canvas-section">
+        <canvas id="fractalCanvas" width="550" height="550"></canvas>
+        <div class="canvas-controls">
+          <button id="pulseBtn" class="control-btn">✦ Activar Pulso / Ritmo</button>
+        </div>
+      </section>
+
+      <!-- Panel de Control e Interpretación de Estilos -->
+      <section class="info-panel">
+        <div class="style-selector">
+          <h3>Selecciona un Estilo de Danza:</h3>
+          <div class="btn-group">
+            <button class="style-btn active" onclick="selectStyle('ballet')">Ballet Clásico</button>
+            <button class="style-btn" onclick="selectStyle('hiphop')">Hip-Hop / Urban</button>
+            <button class="style-btn" onclick="selectStyle('afro')">Danza Afro / Polirritmia</button>
+          </div>
+        </div>
+
+        <div class="analysis-box" id="analysisBox">
+          <h2 id="styleTitle">Ballet Clásico: Geometría Euclidiana & Simetría</h2>
+          <p id="styleMath"><b>Estructura Matemática:</b> Ángulos exactos, vectores de extensión ($180^\circ$), círculos concéntricos y simetría axial.</p>
+          <p id="styleConcept"><b>Expresión en el Cuerpo:</b> La danza académica busca la ilusión de ligereza. La música en comps métrico regular ($3/4$ o $4/4$) genera curvas fractales suaves y arcos cíclicos en el espacio.</p>
+        </div>
+
+        <!-- Parámetros de Ajuste Matemático -->
+        <div class="sliders-box">
+          <label>Polirritmia / Iteraciones: <span id="iterVal">4</span></label>
+          <input type="range" id="iterSlider" min="1" max="6" value="4">
+
+          <label>Velocidad de Movimiento (BPM): <span id="bpmVal">120</span></label>
+          <input type="range" id="bpmSlider" min="60" max="180" value="120">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../../assets/js/jelly.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
