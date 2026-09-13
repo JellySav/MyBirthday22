@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyBirthday22 ✦ Nave Central & Hub Interactivo</title>
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/hub.css">
+  <!-- Fuentes Futuristas / Neón -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Quicksand:wght@500;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Fondo de Partículas / Estrellas -->
+  <div id="starfield"></div>
+
+  <!-- Barra Superior del Sistema -->
+  <header class="system-bar">
+    <div class="system-title">
+      <span class="status-dot online"></span>
+      <span class="system-name">MYBIRTHDAY22 :: OS_CORE_v22.0</span>
+    </div>
+    <div class="system-stats">
+      <span>MODULOS: <strong id="deployedCount">5/22 DESPLEGADOS</strong></span>
+      <span>ESTADO: <strong class="glow-text">OPERATIVO</strong></span>
+    </div>
+  </header>
+
+  <main class="hub-container">
+    
+    <!-- Hero / Presentación de la Nave -->
+    <section class="hero-section">
+      <h1 class="glow-title">✦ LA NAVE CENTRAL ✦</h1>
+      <p class="hero-subtitle">
+        Repositorio interactivo de 22 proyectos personales celebrando el arte, la ciencia, el código, la cultura pop y la curiosidad.
+      </p>
+      
+      <!-- Filtros de Categorías -->
+      <div class="category-filters">
+        <button class="filter-btn active" onclick="filterYearCards('all')">Todos (22)</button>
+        <button class="filter-btn" onclick="filterYearCards('music-art')">🎨 Arte & Música</button>
+        <button class="filter-btn" onclick="filterYearCards('code-math')">📐 Matemática & Código</button>
+        <button class="filter-btn" onclick="filterYearCards('culture-fandom')">🌸 Cultura & Fandom</button>
+        <button class="filter-btn" onclick="filterYearCards('gaming-sim')">🕹️ Juegos & Simulaciones</button>
+      </div>
+    </section>
+
+    <!-- Grid Principal de los 22 Años -->
+    <section class="years-grid" id="yearsGrid">
+      <!-- Se genera y renderiza dinámicamente con JavaScript -->
+    </section>
+
+  </main>
+
+  <!-- Avatar Flotante Jelly / Asistente Guía -->
+  <div id="jellyAssistant" class="jelly-widget">
+    <div class="jelly-avatar">🔮</div>
+    <div class="jelly-speech-bubble" id="jellySpeech">
+      ¡Hola Eavny! Bienvenido/a a La Nave Central. Haz clic en cualquiera de los módulos activos para explorarlo.
+    </div>
+  </div>
+
+  <script src="assets/js/hub.js"></script>
+</body>
+</html>
