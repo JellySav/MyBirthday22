@@ -1,0 +1,314 @@
+:root {
+  --bm-black: #050003;
+  --bm-red: #ff0033;
+  --bm-crimson: #80001a;
+  --bm-gold: #e6b800;
+  --bm-purple: #2b0038;
+  --bm-text: #f0f0f0;
+}
+
+body {
+  background-color: var(--bm-black);
+  color: var(--bm-text);
+  font-family: 'Rajdhani', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Canvas de fondo */
+#galaxyCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(5, 0, 3, 0.85);
+  border-bottom: 2px solid var(--bm-red);
+  position: relative;
+  z-index: 10;
+}
+
+.back-link {
+  color: var(--bm-red);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.year-badge {
+  background: var(--bm-red);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.babymetal-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.fox-god-symbol {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 15px var(--bm-red));
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-12px); }
+}
+
+.glitch-title {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 20px var(--bm-red), 0 0 40px var(--bm-crimson);
+  letter-spacing: 6px;
+  margin: 0.5rem 0;
+}
+
+.hero-tagline {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--bm-gold);
+  letter-spacing: 2px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.bm-btn {
+  font-family: 'Orbitron', sans-serif;
+  padding: 0.8rem 1.8rem;
+  border: 2px solid var(--bm-red);
+  background: transparent;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bm-btn.primary {
+  background: var(--bm-red);
+  box-shadow: 0 0 15px rgba(255, 0, 51, 0.5);
+}
+
+.bm-btn.primary:hover {
+  background: #cc0029;
+  box-shadow: 0 0 25px rgba(255, 0, 51, 0.8);
+}
+
+.bm-btn.secondary:hover {
+  background: rgba(255, 0, 51, 0.2);
+  border-color: var(--bm-gold);
+  color: var(--bm-gold);
+}
+
+/* Reproductor de Audio */
+.player-section {
+  margin: 3rem 0;
+}
+
+.player-card {
+  background: linear-gradient(135deg, rgba(43, 0, 56, 0.9), rgba(10, 0, 15, 0.95));
+  border: 2px solid var(--bm-red);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(128, 0, 26, 0.5);
+}
+
+.album-art-box img {
+  border-radius: 8px;
+  border: 2px solid var(--bm-gold);
+  box-shadow: 0 0 15px rgba(230, 184, 0, 0.3);
+}
+
+.player-controls-box {
+  flex-grow: 1;
+}
+
+.status-badge {
+  background: var(--bm-crimson);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.track-details h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  margin: 0.5rem 0 0.2rem 0;
+  color: #fff;
+}
+
+.track-details p {
+  color: #b3a0b8;
+  margin: 0 0 1.5rem 0;
+}
+
+.audio-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.control-btn {
+  background: #1a0022;
+  border: 1px solid var(--bm-red);
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  background: var(--bm-red);
+  transform: scale(1.1);
+}
+
+.control-btn.play-btn {
+  width: 55px;
+  height: 55px;
+  font-size: 1.4rem;
+  background: var(--bm-red);
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: #1a0022;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--bm-red);
+  box-shadow: 0 0 10px var(--bm-red);
+  transition: width 0.1s linear;
+}
+
+/* Discografía */
+.discography-section {
+  margin-top: 4rem;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  color: var(--bm-gold);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(230, 184, 0, 0.4);
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.album-card {
+  background: rgba(15, 0, 20, 0.8);
+  border: 1px solid var(--bm-crimson);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--bm-red);
+  box-shadow: 0 0 20px rgba(255, 0, 51, 0.4);
+}
+
+.album-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.album-card h4 {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0 0 0.4rem 0;
+  color: #fff;
+}
+
+.album-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Modal Fox God */
+.fox-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.fox-modal-content {
+  background: #1a000d;
+  border: 2px solid var(--bm-gold);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 30px var(--bm-gold);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 02 - BABYMETAL Metal Galaxy Tribute</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes estilo Gothic / Metal / Cyberpunk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Orbitron:wght@500;800;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navegación de retorno al Hub -->
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 02 / 22</span>
+  </nav>
+
+  <!-- Canvas de Partículas / Galaxia de Fondo -->
+  <canvas id="galaxyCanvas"></canvas>
+
+  <main class="babymetal-container">
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="fox-god-symbol">🦊</div>
+      <h1 class="glitch-title" data-text="BABYMETAL">BABYMETAL</h1>
+      <p class="hero-tagline">✦ THE FOX GOD LEGEND — KAWAII METAL GALAXY ✦</p>
+      
+      <div class="hero-actions">
+        <button class="bm-btn primary" onclick="scrollToSection('discography')">Ver Discografía</button>
+        <button class="bm-btn secondary" id="foxGodMsgBtn">Invocar al Fox God</button>
+      </div>
+    </header>
+
+    <!-- Reproductor de Audio Estilo Metal Galaxy -->
+    <section class="player-section">
+      <div class="player-card">
+        <div class="album-art-box">
+          <img id="bmTrackCover" src="https://placehold.co/180x180/1a0000/ff0033?text=Metal+Galaxy" alt="Album Cover">
+        </div>
+        <div class="player-controls-box">
+          <div class="track-details">
+            <span class="status-badge">REPRODUCIENDO</span>
+            <h3 id="bmTrackTitle">Megitsune (メギツネ)</h3>
+            <p id="bmTrackAlbum">Álbum: BABYMETAL (2014)</p>
+          </div>
+          
+          <div class="audio-controls">
+            <button class="control-btn" id="prevTrackBtn">⏮</button>
+            <button class="control-btn play-btn" id="playPauseBtn">▶</button>
+            <button class="control-btn" id="nextTrackBtn">⏭</button>
+          </div>
+
+          <div class="progress-bar-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Discografía / Hitos -->
+    <section class="discography-section" id="discography">
+      <h2 class="section-title">✧ METAL DISCOGRAPHY ✧</h2>
+      
+      <div class="albums-grid" id="albumsGrid">
+        <!-- Tarjetas cargadas dinámicamente -->
+      </div>
+    </section>
+
+    <!-- Modal para el mensaje del Fox God -->
+    <div class="fox-modal" id="foxModal">
+      <div class="fox-modal-content">
+        <span class="close-modal" id="closeFoxModal">&times;</span>
+        <h3>🦊 REVELACIÓN DEL FOX GOD</h3>
+        <p id="foxGodText">"Only the Fox God Knows..."</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Script de Jelly (Avatar flotante global) -->
+  <script src="../../assets/js/jelly.js"></script>
+  <!-- Script específico del Año 2 -->
+  <script src="main.js"></script>
+</body>
+</html>
