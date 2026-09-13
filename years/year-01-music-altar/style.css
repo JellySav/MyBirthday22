@@ -1,0 +1,292 @@
+:root {
+  --bg-dark: #0a010d;
+  --altar-purple: #1a0026;
+  --accent-pink: #ff3385;
+  --neon-cyan: #00f0ff;
+  --gold-accent: #ffd700;
+  --text-light: #f5e6f7;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(circle at 50% 20%, #20002c 0%, #0a010d 80%);
+  min-height: 100vh;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(10, 1, 13, 0.8);
+  border-bottom: 1px solid var(--accent-pink);
+}
+
+.back-link {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.year-badge {
+  background: var(--accent-pink);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.altar-header {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.altar-title {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-pink);
+  text-shadow: 0 0 10px rgba(255, 51, 133, 0.7);
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.altar-subtitle {
+  font-size: 0.95rem;
+  color: #cca3d9;
+}
+
+.shrine-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Escenario del Altar */
+.shrine-stage {
+  position: relative;
+  background: linear-gradient(180deg, #15001c 0%, #08000a 100%);
+  border: 2px solid var(--accent-pink);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(255, 51, 133, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 480px;
+}
+
+/* Velas */
+.candle {
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 90px;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.candle-left { left: 30px; }
+.candle-right { right: 30px; }
+
+.flame {
+  width: 14px;
+  height: 22px;
+  background: orange;
+  border-radius: 50% 50% 20% 20%;
+  position: absolute;
+  top: -20px;
+  left: 3px;
+  box-shadow: 0 0 15px orange, 0 0 25px red;
+  animation: flicker 0.2s infinite alternate;
+}
+
+.candle.off .flame {
+  display: none;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+/* Mazo de Photocards */
+.cards-display {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.photocard {
+  width: 110px;
+  height: 165px;
+  background: #2a0033;
+  border: 2px solid var(--gold-accent);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.photocard:hover, .photocard.active {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 15px var(--neon-cyan);
+  border-color: var(--neon-cyan);
+}
+
+.photocard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photocard-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 4px 0;
+}
+
+/* Mesa de Altar */
+.altar-table {
+  width: 100%;
+  height: 40px;
+  background: #2d0036;
+  border-top: 3px solid var(--gold-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.altar-inscription {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-accent);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+/* Panel Diario / Reproductor */
+.music-journal-panel {
+  background: rgba(26, 0, 38, 0.9);
+  border: 1px solid rgba(255, 51, 133, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.song-card-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.song-card-header img {
+  border-radius: 8px;
+  border: 2px solid var(--accent-pink);
+}
+
+.song-info h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--neon-cyan);
+}
+
+.genre-tag {
+  display: inline-block;
+  background: var(--accent-pink);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.audio-player-box {
+  margin: 1.2rem 0;
+}
+
+.audio-player-box audio {
+  width: 100%;
+}
+
+/* Pestañas */
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #4a0052;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #b37bb8;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.tab-btn.active {
+  color: var(--accent-pink);
+  border-bottom: 2px solid var(--accent-pink);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.lyrics-text {
+  white-space: pre-wrap;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.notes-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.notes-form textarea {
+  background: #0d0014;
+  border: 1px solid #4a0052;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.notes-form button {
+  align-self: flex-end;
+  background: var(--neon-cyan);
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}

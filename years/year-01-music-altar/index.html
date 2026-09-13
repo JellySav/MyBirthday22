@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 01 - The Music Altar & Songbook</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes estilo Gothic & Aesthetic desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Metamorphous&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navegación de retorno al Hub -->
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 01 / 22</span>
+  </nav>
+
+  <main class="altar-container">
+    <!-- Encabezado del Altar -->
+    <header class="altar-header">
+      <h1 class="altar-title">✧ The Music Shrine & Songbook ✧</h1>
+      <p class="altar-subtitle">Un altar dedicado a los ritmos, letras y emociones que marcan mi universo musical (K-pop, C-pop, J-pop)</p>
+    </header>
+
+    <div class="shrine-layout">
+      <!-- El Altar Interactivo (Visual / Yandere Sim Aesthetic) -->
+      <section class="shrine-stage">
+        <div class="candle candle-left" id="candleLeft" title="Haz clic para encender/apagar la vela">
+          <div class="flame"></div>
+        </div>
+        <div class="candle candle-right" id="candleRight" title="Haz clic para encender/apagar la vela">
+          <div class="flame"></div>
+        </div>
+
+        <!-- Mazo / Galería de Photocards en el Altar -->
+        <div class="cards-display" id="cardsDisplay">
+          <!-- Las photocards se generan dinámicamente con JS -->
+        </div>
+
+        <div class="altar-table">
+          <span class="altar-inscription">✦ IN MUSIC WE TRUST ✦</span>
+        </div>
+      </section>
+
+      <!-- Panel de Detalles: Reproductor, Letras & Diario Emocional -->
+      <section class="music-journal-panel">
+        <div class="song-card-header">
+          <img id="activeCover" src="https://placehold.co/120x120/1a001a/ff66b2?text=Music" alt="Cover">
+          <div class="song-info">
+            <h2 id="songTitle">Selecciona una canción del altar</h2>
+            <p id="songArtist">Artista / Grupo</p>
+            <span id="songGenre" class="genre-tag">K-POP / C-POP / J-POP</span>
+          </div>
+        </div>
+
+        <!-- Reproductor de Audio -->
+        <div class="audio-player-box">
+          <audio id="audioPlayer" controls></audio>
+        </div>
+
+        <!-- Pestañas de Navegación del Panel -->
+        <div class="tab-buttons">
+          <button class="tab-btn active" onclick="switchTab('lyrics')">📜 Letra</button>
+          <button class="tab-btn" onclick="switchTab('journal')">📖 Diario Emocional</button>
+        </div>
+
+        <!-- Contenido de Letra -->
+        <div id="lyricsTab" class="tab-content active">
+          <pre id="songLyrics" class="lyrics-text">Selecciona una tarjeta para ver la letra de la canción...</pre>
+        </div>
+
+        <!-- Contenido de Diario Emocional -->
+        <div id="journalTab" class="tab-content">
+          <div class="journal-entry">
+            <h3>Reflexión & Sentimientos:</h3>
+            <p id="journalText">Aquí aparecerá el apunte personal sobre lo que evoca esta canción, recuerdos o análisis técnico/estético...</p>
+          </div>
+          <!-- Formulario interactivo para agregar tus notas personales -->
+          <div class="notes-form">
+            <textarea id="userNoteInput" placeholder="Añade tu propio pensamiento sobre esta canción..."></textarea>
+            <button id="saveNoteBtn">Guardar Nota</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Script de Jelly (Avatar flotante global) -->
+  <script src="../../assets/js/jelly.js"></script>
+  <!-- Script específico del Año 1 -->
+  <script src="main.js"></script>
+</body>
+</html>
