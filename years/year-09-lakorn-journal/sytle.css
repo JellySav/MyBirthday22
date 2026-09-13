@@ -1,0 +1,211 @@
+:root {
+  --paper-bg: #f4ece1;
+  --paper-border: #d4c3a3;
+  --ink-dark: #2b1e16;
+  --gold-vintage: #a88132;
+  --crimson-royal: #6b1d2f;
+  --sepia-shadow: rgba(68, 43, 20, 0.25);
+}
+
+body {
+  background-color: #1a120c;
+  color: var(--ink-dark);
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(circle at 50% 30%, #332215 0%, #0f0a07 90%);
+  min-height: 100vh;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(15, 10, 7, 0.9);
+  border-bottom: 2px solid var(--gold-vintage);
+}
+
+.back-link {
+  color: var(--gold-vintage);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Cinzel', serif;
+}
+
+.year-badge {
+  background: var(--gold-vintage);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+}
+
+.journal-container {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Libro de Época */
+.journal-book {
+  background: var(--paper-bg);
+  border: 12px solid #3d2a1d;
+  border-radius: 8px;
+  box-shadow: 0 0 35px var(--sepia-shadow), inset 0 0 60px rgba(168, 129, 50, 0.15);
+  padding: 2.5rem;
+  position: relative;
+  background-image: repeating-linear-gradient(#f4ece1 0px, #f4ece1 29px, #e8dbc7 30px);
+}
+
+.journal-header {
+  text-align: center;
+  border-bottom: 2px double var(--gold-vintage);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.vintage-seal {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--crimson-royal);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.journal-title {
+  font-family: 'Cinzel', serif;
+  color: var(--crimson-royal);
+  font-size: 2.1rem;
+  margin: 0.5rem 0 0.2rem 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.journal-subtitle {
+  font-family: 'Charm', cursive;
+  font-size: 1.25rem;
+  color: #523b2b;
+  margin: 0;
+}
+
+/* Pestañas de Tomos */
+.volume-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background: #e3d3bd;
+  border: 1px solid var(--gold-vintage);
+  color: var(--ink-dark);
+  font-family: 'Cinzel', serif;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--crimson-royal);
+  color: #fff;
+  border-color: var(--crimson-royal);
+}
+
+/* Estructura de la Página del Diario */
+.journal-page {
+  min-height: 420px;
+  line-height: 1.8;
+}
+
+.page-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.entry-chapter {
+  font-family: 'Cinzel', serif;
+  color: var(--crimson-royal);
+  font-size: 1.4rem;
+  margin-top: 0;
+  border-bottom: 1px solid var(--paper-border);
+  padding-bottom: 0.4rem;
+}
+
+.handwritten-text {
+  font-family: 'Charm', cursive;
+  font-size: 1.35rem;
+  color: #3b281c;
+  line-height: 1.9;
+}
+
+.polaroid-frame {
+  background: #fff;
+  padding: 10px 10px 25px 10px;
+  box-shadow: 3px 5px 15px rgba(0,0,0,0.2);
+  transform: rotate(-2deg);
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.polaroid-frame img {
+  width: 100%;
+  height: auto;
+  filter: sepia(0.2) contrast(1.05);
+  border-radius: 2px;
+}
+
+.polaroid-caption {
+  font-family: 'Charm', cursive;
+  font-size: 1.1rem;
+  color: #4a3425;
+  margin-top: 8px;
+}
+
+/* Tarjetas de Personajes / Hermanos */
+.brothers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.brother-card {
+  background: rgba(255, 255, 255, 0.4);
+  border-left: 4px solid var(--gold-vintage);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.brother-card h3 {
+  margin: 0 0 0.3rem 0;
+  font-family: 'Cinzel', serif;
+  color: var(--crimson-royal);
+  font-size: 1.1rem;
+}
+
+.brother-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #423024;
+}
+
+.journal-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--paper-border);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #705847;
+}
+
+.handwritten-note {
+  font-family: 'Charm', cursive;
+  font-size: 1.1rem;
+}
