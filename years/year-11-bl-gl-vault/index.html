@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 11 - BL & GL Fan Vault & Scrapbook</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes para estética Scrapbook / Fan Zine -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 11 / 22</span>
+  </nav>
+
+  <main class="scrapbook-container">
+    
+    <header class="vault-header">
+      <div class="sticker-badge">✨ 💖 🍿</div>
+      <h1>The Ultimate BL & GL Fan Vault</h1>
+      <p class="subtitle">Mi rincón de culto: series favoritas, tropos inolvidables, escándalos del fandom y recomendaciones</p>
+    </header>
+
+    <!-- Navegación por pestañas del Scrapbook -->
+    <nav class="vault-tabs">
+      <button class="tab-btn active" onclick="switchTab('holy-grail')">🏆 The Holy Grail (Favs)</button>
+      <button class="tab-btn" onclick="switchTab('drama-board')">🔥 Muro de Escándalos & Tropo-Talk</button>
+      <button class="tab-btn" onclick="switchTab('recommender')">🎲 Recomendador por Mood</button>
+    </nav>
+
+    <!-- SECCIÓN 1: THE HOLY GRAIL (GALERÍA DE FAVORITOS) -->
+    <section class="vault-section active" id="holy-grail-section">
+      <div class="polaroid-grid">
+        
+        <div class="polaroid-card">
+          <div class="washi-tape"></div>
+          <div class="photo-box bl-bg">
+            <span class="genre-tag bl">BL / Drama</span>
+            <span class="emoji-icon">🌊</span>
+          </div>
+          <h3>I Told Sunset About You</h3>
+          <p class="handwritten">La obra maestra del paso a la adultez. Fotografía, poesía visual e intensidad emocional pura.</p>
+          <div class="card-footer">⭐ 10/10 | Tailandia</div>
+        </div>
+
+        <div class="polaroid-card">
+          <div class="washi-tape pink"></div>
+          <div class="photo-box gl-bg">
+            <span class="genre-tag gl">GL / Romance</span>
+            <span class="emoji-icon">🌸</span>
+          </div>
+          <h3>GAP The Series</h3>
+          <p class="handwritten">El pilar moderno del GL tailandés. Dinámica office romance con el clásico contraste dulce/serio.</p>
+          <div class="card-footer">⭐ 9.5/10 | Tailandia</div>
+        </div>
+
+        <div class="polaroid-card">
+          <div class="washi-tape yellow"></div>
+          <div class="photo-box bl-bg">
+            <span class="genre-tag bl">BL / Thriller</span>
+            <span class="emoji-icon">🏢</span>
+          </div>
+          <h3>Not Me</h3>
+          <p class="handwritten">Acción, crítica social, identidad y una química arrolladora en medio del activismo político.</p>
+          <div class="card-footer">⭐ 10/10 | Tailandia</div>
+        </div>
+
+        <div class="polaroid-card">
+          <div class="washi-tape green"></div>
+          <div class="photo-box gl-bg">
+            <span class="genre-tag gl">GL / Periodo</span>
+            <span class="emoji-icon">📜</span>
+          </div>
+          <h3>The Handmaiden</h3>
+          <p class="handwritten">Cine de autor absoluto. Giros de guion brillantes, estética impecable y un romance inolvidable.</p>
+          <div class="card-footer">⭐ 10/10 | Corea del Sur</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: MURO DE ESCÁNDALOS & TROPO-TALK -->
+    <section class="vault-section" id="drama-board-section">
+      <div class="corkboard-wall">
+        <h2>🔥 Anotaciones & Discusiones de la Industria</h2>
+        
+        <div class="sticky-notes-grid">
+          <div class="sticky-note yellow">
+            <h3>⚡ El fenómeno del "High Budget GL"</h3>
+            <p>Cómo pasamos de producciones indies con poco presupuesto a superproducciones de época y fantasía que rompen récords globales.</p>
+          </div>
+
+          <div class="sticky-note pink">
+            <h3>🚩 El Tropo: "Enemies to Lovers"</h3>
+            <p>Indiscutiblemente el mejor tropo cuando está bien construido. La tensión no resuelta en los primeros episodios siempre sostiene la serie.</p>
+          </div>
+
+          <div class="sticky-note blue">
+            <h3>🎭 Escándalos de Producción & Guion</h3>
+            <p>Los famosos cambios de director a mitad de emisión, episodios finales reescritos en 24 horas y los barcos (*ships*) que se hundieron en la vida real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: GENERADOR DE RECOMENDACIONES -->
+    <section class="vault-section" id="recommender-section">
+      <div class="recommender-box">
+        <h2>🎲 Recomendador por Estado de Ánimo</h2>
+        <p>¿Qué tienes ganas de ver hoy?</p>
+
+        <div class="mood-buttons">
+          <button class="mood-btn" onclick="recommendSeries('angst')">😭 Quiero llorar / Drama Intenso</button>
+          <button class="mood-btn" onclick="recommendSeries('fluff')">🧁 Dulce & Sin Estrés</button>
+          <button class="mood-btn" onclick="recommendSeries('action')">🔥 Acción & Misterio</button>
+        </div>
+
+        <div class="recommendation-result" id="recommendationResult">
+          <p class="placeholder-text">✦ Selecciona tu mood arriba para abrir el cofre de recomendaciones ✦</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../../assets/js/jelly.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
