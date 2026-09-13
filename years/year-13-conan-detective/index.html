@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 13 - Oficina de Detective: Expediente Conan</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes estilo Detective & Anime 90s -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 13 / 22</span>
+  </nav>
+
+  <main class="detective-office">
+    
+    <header class="office-header">
+      <div class="badge-icon">🔍</div>
+      <h1>Oficina de Investigación Teen: Expediente Kudo</h1>
+      <p class="subtitle">Investigación independiente sobre el caso Shinichi Kudo y la Organización de los Hombres de Negro</p>
+    </header>
+
+    <!-- Pestañas de la Oficina -->
+    <div class="office-tabs">
+      <button class="tab-btn active" onclick="switchSection('pinboard')">📌 Pizarra de Sospechosos (Rum & MIB)</button>
+      <button class="tab-btn" onclick="switchSection('archive')">🗄️ Archivero de Casos Favs</button>
+      <button class="tab-btn" onclick="switchSection('dossiers')">📂 Dossiers de Personajes</button>
+    </div>
+
+    <!-- SECCIÓN 1: PIZARRA DE CORCHO (RUM & ORGANIZACIÓN NEGRA) -->
+    <section class="office-section active" id="pinboardSection">
+      <div class="corkboard">
+        <div class="corkboard-title">🔍 MIRA DE INVESTIGACIÓN: ORGANIZACIÓN DE NEGRO & RUM</div>
+        
+        <div class="suspects-grid">
+          <div class="suspect-card" onclick="openSuspectModal('rum')">
+            <span class="pin">📍</span>
+            <div class="photo-placeholder">❓</div>
+            <h3>SOSPECHOSO: RUM</h3>
+            <span class="status-tag danger">NÚMERO 2 EN MANDO</span>
+            <p>Tres rostros posibles: un hombre robusto, un hombre afeminado o un anciano. Un ojo artificial.</p>
+          </div>
+
+          <div class="suspect-card" onclick="openSuspectModal('gin')">
+            <span class="pin">📍</span>
+            <div class="photo-placeholder dark">🍸</div>
+            <h3>GIN</h3>
+            <span class="status-tag high-risk">EJECUTOR PRINCIPAL</span>
+            <p>Sanguinario, observador y fiel a la Organización. Conduce un Porsche 356A negro.</p>
+          </div>
+
+          <div class="suspect-card" onclick="openSuspectModal('vermouth')">
+            <span class="pin">📍</span>
+            <div class="photo-placeholder">🍸</div>
+            <h3>VERMOUTH</h3>
+            <span class="status-tag secret">MAESTRA DEL DISFRAZ</span>
+            <p>"A secret makes a woman woman." Conoce la verdadera identidad de Conan y Ai.</p>
+          </div>
+        </div>
+
+        <div class="evidence-note">
+          <h4>💡 Nota de la Detective:</h4>
+          <p>La clave del antídoto del APTX 4869 y la verdadera razón del encogimiento de Shinichi reside en las investigaciones pasadas de la familia Miyano...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: ARCHIVERO METÁLICO DE CASOS -->
+    <section class="office-section" id="archiveSection">
+      <div class="file-cabinet">
+        <h2>🗄️ Archivero de Casos y Películas Favoritas</h2>
+        <div class="folders-grid">
+          <div class="manila-folder" onclick="showCaseDetails('moonlight')">
+            <div class="folder-tab">CASO #011</div>
+            <h3>El Asesinato del Soneto a la Luz de la Luna</h3>
+            <p>El caso que cambió la filosofía de Shinichi sobre no dejar morir a los culpables.</p>
+          </div>
+
+          <div class="manila-folder" onclick="showCaseDetails('desperate')">
+            <div class="folder-tab">CASO #191</div>
+            <h3>La Desesperada Resurrección</h3>
+            <p>El regreso temporal de Shinichi en la obra escolar junto a Ran.</p>
+          </div>
+
+          <div class="manila-folder" onclick="showCaseDetails('movie26')">
+            <div class="folder-tab">PELÍCULA #26</div>
+            <h3>Black Iron Submarine</h3>
+            <p>Tensión máxima en la instalación Pacific Buoy con Haibara en la mira de la Organización.</p>
+          </div>
+        </div>
+        <div class="case-display" id="caseDisplay">
+          <p class="placeholder-text">✦ Selecciona una carpeta manila para examinar el expediente ✦</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: DOSSIERS DE PERSONAJES -->
+    <section class="office-section" id="dossiersSection">
+      <div class="dossiers-container">
+        <div class="dossier-card">
+          <span class="top-secret-stamp">CLASIFICADO</span>
+          <h2>EDOGAWA CONAN / SHINICHI KUDO</h2>
+          <p><b>Ocupación:</b> Detective Adolescente / Estudiante de Primaria Teitan</p>
+          <p><b>Gadgets de Agasa:</b> Moño transformador de voz, patineta turbo, tirantes elásticos y lentes de rastreo.</p>
+          <p><b>Análisis Personal:</b> Una mente brillante impulsada por una sed insaciable de verdad, obligado a proteger a Ran mientras resuelve crímenes desde la sombra.</p>
+        </div>
+
+        <div class="dossier-card">
+          <span class="top-secret-stamp">CLASIFICADO</span>
+          <h2>AI HAIBARA / SHIHO MIYANO (SHERRY)</h2>
+          <p><b>Ocupación:</b> Ex-científica de la Organización / Química</p>
+          <p><b>Misión:</b> Creadora del APTX 4869 y pieza clave para sintetizar el antídoto definitivo.</p>
+          <p><b>Análisis Personal:</b> Su evolución de una científica solitaria y atormentada por su pasado a encontrar una familia real junto a Conan y los Niños Detectives.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../../assets/js/jelly.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

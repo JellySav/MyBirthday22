@@ -1,0 +1,264 @@
+:root {
+  --wood-desk: #2b1b17;
+  --cork-bg: #b8860b;
+  --manila-paper: #f4d06f;
+  --ink-black: #1a1a1a;
+  --stamp-red: #d90429;
+  --accent-cyan: #00f0ff;
+}
+
+body {
+  background-color: var(--wood-desk);
+  color: #f0e6f5;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  background-image: radial-gradient(circle at 50% 20%, #4a2e28 0%, #170e0c 90%);
+  min-height: 100vh;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(23, 14, 12, 0.95);
+  border-bottom: 2px solid var(--manila-paper);
+}
+
+.back-link {
+  color: var(--manila-paper);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.year-badge {
+  background: var(--stamp-red);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.detective-office {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.office-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.office-header h1 {
+  font-family: 'Special Elite', cursive;
+  color: var(--manila-paper);
+  font-size: 2.2rem;
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+.subtitle {
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Tabs */
+.office-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background: #3a2520;
+  border: 1px solid var(--manila-paper);
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--stamp-red);
+  border-color: var(--stamp-red);
+  box-shadow: 0 0 12px rgba(217, 4, 41, 0.5);
+}
+
+/* Secciones generales */
+.office-section {
+  display: none;
+}
+
+.office-section.active {
+  display: block;
+}
+
+/* Pizarra de Corcho */
+.corkboard {
+  background: #8b5a2b;
+  border: 12px solid #5c3a1e;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.6), 0 10px 25px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.corkboard-title {
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
+  background: #000;
+  color: #00ff66;
+  padding: 0.4rem 1rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.suspects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.suspect-card {
+  background: #fff;
+  color: var(--ink-black);
+  padding: 1rem;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: rotate(-1deg);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.suspect-card:hover {
+  transform: scale(1.03) rotate(0deg);
+}
+
+.pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 110px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.status-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.status-tag.danger { background: var(--stamp-red); }
+.status-tag.high-risk { background: #d97706; }
+.status-tag.secret { background: #4b5563; }
+
+.evidence-note {
+  margin-top: 2rem;
+  background: #fef08a;
+  color: #713f12;
+  padding: 1rem 1.5rem;
+  border-left: 5px solid #ca8a04;
+  font-family: 'Special Elite', cursive;
+}
+
+/* Archivero de Casos */
+.file-cabinet {
+  background: #27272a;
+  border: 4px solid #52525b;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.manila-folder {
+  background: var(--manila-paper);
+  color: var(--ink-black);
+  padding: 1rem;
+  border-radius: 0 8px 4px 4px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.manila-folder:hover {
+  transform: translateY(-5px);
+}
+
+.folder-tab {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  background: #e5b842;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.1rem 0.6rem;
+  border-radius: 4px 4px 0 0;
+}
+
+.case-display {
+  background: #18181b;
+  border: 1px dashed var(--manila-paper);
+  padding: 1.5rem;
+  border-radius: 6px;
+  min-height: 120px;
+}
+
+.placeholder-text {
+  text-align: center;
+  color: #a1a1aa;
+}
+
+/* Dossiers */
+.dossiers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.dossier-card {
+  background: #fafaf9;
+  color: #1c1917;
+  padding: 2rem;
+  border-radius: 4px;
+  position: relative;
+  border-top: 8px solid var(--stamp-red);
+}
+
+.top-secret-stamp {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: 3px solid var(--stamp-red);
+  color: var(--stamp-red);
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  font-family: 'Special Elite', cursive;
+  transform: rotate(12deg);
+  opacity: 0.8;
+}
