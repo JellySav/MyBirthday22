@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 06 - Hanzi Flashcards & Guochao Aesthetic</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes Tradicionales y Modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@600;900&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 06 / 22</span>
+  </nav>
+
+  <main class="guochao-container">
+    
+    <header class="guochao-header">
+      <div class="header-seal">国潮</div>
+      <h1>汉字 Studio ✦ Hanzi Flashcards</h1>
+      <p class="subtitle">Explora la poesía, caligrafía y significado de los caracteres chinos con estética tradicional-urbana.</p>
+    </header>
+
+    <!-- Barra de Filtros por Categoría -->
+    <nav class="category-bar">
+      <button class="cat-btn active" onclick="filterCards('all')">Todos</button>
+      <button class="cat-btn" onclick="filterCards('nature')">🌱 Naturaleza</button>
+      <button class="cat-btn" onclick="filterCards('emotions')">💖 Emociones & Arte</button>
+      <button class="cat-btn" onclick="filterCards('abstract')">🌌 Conceptos</button>
+    </nav>
+
+    <!-- Área de Flashcard Principal -->
+    <div class="flashcard-stage">
+      
+      <div class="card-3d-wrapper" onclick="flipCard()">
+        <div class="card-inner" id="cardInner">
+          
+          <!-- Frente de la Tarjeta -->
+          <div class="card-face card-front">
+            <span class="pinyin-tag" id="pinyinDisplay">rì</span>
+            <div class="hanzi-character" id="hanziDisplay">日</div>
+            <p class="flip-hint">✦ Haz clic para girar ✦</p>
+          </div>
+
+          <!-- Reverso de la Tarjeta -->
+          <div class="card-face card-back">
+            <h3 class="meaning-title" id="meaningDisplay">Sol / Día</h3>
+            <div class="card-divider"></div>
+            <p class="etymology-text" id="etymologyDisplay">Representa originalmente un círculo con un punto en el centro, simbolizando el sol en el cielo.</p>
+            <div class="example-box">
+              <span class="ex-hanzi" id="exampleHanzi">今日 (jīnrì)</span>
+              <span class="ex-trans" id="exampleTrans">Hoy / Día actual</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Control de Navegación -->
+      <div class="nav-controls">
+        <button class="nav-btn" onclick="prevCard()">◄ Anterior</button>
+        <span class="card-counter" id="cardCounter">1 / 6</span>
+        <button class="nav-btn" onclick="nextCard()">Siguiente ►</button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="../../assets/js/jelly.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

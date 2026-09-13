@@ -1,0 +1,255 @@
+:root {
+  --vermilion-red: #c82e2b;
+  --gold-accent: #f59e0b;
+  --ink-black: #0f172a;
+  --paper-bg: #fffbf0;
+  --bg-dark: #0a0508;
+  --cyan-guochao: #06b6d4;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #f8fafc;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 50% 20%, #260a14 0%, var(--bg-dark) 85%);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(10, 5, 8, 0.95);
+  border-bottom: 2px solid var(--vermilion-red);
+}
+
+.back-link {
+  color: var(--gold-accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.year-badge {
+  background: var(--vermilion-red);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.guochao-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.guochao-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.header-seal {
+  display: inline-block;
+  background: var(--vermilion-red);
+  color: #fff;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(200, 46, 43, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.guochao-header h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.2rem;
+  color: #fff;
+  margin: 0.3rem 0;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.subtitle {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Barra de Filtros */
+.category-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  background: rgba(30, 15, 25, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.cat-btn.active, .cat-btn:hover {
+  background: var(--vermilion-red);
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 12px rgba(200, 46, 43, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Escenario 3D Flashcard */
+.flashcard-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card-3d-wrapper {
+  width: 320px;
+  height: 420px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid var(--gold-accent);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+/* Frente de la Tarjeta */
+.card-front {
+  background: var(--paper-bg);
+  color: var(--ink-black);
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.pinyin-tag {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--vermilion-red);
+}
+
+.hanzi-character {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 7.5rem;
+  line-height: 1;
+  color: var(--ink-black);
+  text-shadow: 2px 2px 0 var(--gold-accent);
+  user-select: none;
+}
+
+.flip-hint {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+/* Reverso de la Tarjeta */
+.card-back {
+  background: #110914;
+  color: #f8fafc;
+  transform: rotateY(180deg);
+  border-color: var(--cyan-guochao);
+  justify-content: center;
+  gap: 1rem;
+}
+
+.meaning-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.8rem;
+  color: var(--gold-accent);
+  margin: 0;
+}
+
+.card-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--cyan-guochao);
+}
+
+.etymology-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.example-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px dashed var(--cyan-guochao);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  width: 80%;
+}
+
+.ex-hanzi {
+  display: block;
+  font-family: 'Noto Serif SC', serif;
+  color: var(--gold-accent);
+  font-weight: bold;
+}
+
+.ex-trans {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Controles */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-btn {
+  background: rgba(30, 15, 25, 0.9);
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-accent);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background: var(--gold-accent);
+  color: #000;
+}
+
+.card-counter {
+  font-weight: bold;
+  color: #94a3b8;
+}
