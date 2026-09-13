@@ -1,0 +1,275 @@
+:root {
+  --bg-cozy: #1e1b18;
+  --panel-bg: #2d2621;
+  --accent-green: #88c057;
+  --accent-warm: #eab308;
+  --text-light: #f5f0eb;
+  --border-soft: #44372e;
+}
+
+body {
+  background-color: var(--bg-cozy);
+  color: var(--text-light);
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 50% 30%, #362e28 0%, #171412 90%);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(23, 20, 18, 0.9);
+  border-bottom: 2px solid var(--accent-green);
+}
+
+.back-link {
+  color: var(--accent-green);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.year-badge {
+  background: var(--accent-green);
+  color: #1a2e05;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.lab-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.lab-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.pixel-sprout {
+  font-size: 2rem;
+}
+
+.lab-header h1 {
+  font-family: 'Comfortaa', cursive;
+  color: #f5f0eb;
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  color: #a89a8e;
+  font-size: 0.95rem;
+}
+
+/* Workbench Grid */
+.workbench {
+  display: grid;
+  grid-template-columns: 1fr 280px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .workbench {
+    grid-template-columns: 1fr;
+  }
+}
+
+.botanical-shelf, .tasting-notes {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.botanical-shelf h2, .tasting-notes h2 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.15rem;
+  color: var(--accent-green);
+  margin-top: 0;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #a89a8e;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.ing-card {
+  background: #382e28;
+  border: 1px solid #4a3d35;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+
+.ing-card:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+}
+
+.ing-card.selected {
+  background: #4d4034;
+  border-color: var(--accent-warm);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.3);
+}
+
+.ing-icon { font-size: 1.6rem; }
+.ing-name { font-size: 0.85rem; }
+
+/* Estación de Infusión / Taza Pixel */
+.brewing-station {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cup-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.steam-container {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  height: 40px;
+}
+
+.steam-container.active {
+  opacity: 1;
+}
+
+.steam {
+  font-size: 1.2rem;
+  animation: floatSteam 2s infinite ease-in-out;
+}
+
+.steam:nth-child(2) { animation-delay: 0.4s; }
+.steam:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes floatSteam {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.3; }
+  50% { transform: translateY(-12px) scale(1.1); opacity: 1; }
+  100% { transform: translateY(-24px) scale(1.3); opacity: 0; }
+}
+
+.pixel-cup {
+  width: 140px;
+  height: 110px;
+  background: #e2e8f0;
+  border: 6px solid #94a3b8;
+  border-radius: 0 0 50px 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset -10px 0 0 rgba(0,0,0,0.1);
+}
+
+.pixel-cup::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 20px;
+  width: 20px;
+  height: 45px;
+  border: 6px solid #94a3b8;
+  border-radius: 0 15px 15px 0;
+}
+
+.tea-liquid {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: #4a372e;
+  transition: height 1.5s ease-in-out, background-color 1s ease;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.brew-btn, .reset-btn {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.brew-btn {
+  background: var(--accent-green);
+  color: #1a2e05;
+}
+
+.reset-btn {
+  background: #44372e;
+  color: #d2c5b9;
+}
+
+.brew-btn:hover, .reset-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Notas y Paletas */
+.selected-ingredients ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #d2c5b9;
+}
+
+.empty-msg {
+  list-style: none;
+  margin-left: -1.2rem;
+  color: #8a7a6d;
+  font-style: italic;
+}
+
+.properties-text {
+  font-size: 0.9rem;
+  color: #e2d7cd;
+  line-height: 1.5;
+}
+
+.color-swatches {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.swatch {
+  width: 100%;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background-color 0.8s ease;
+}
