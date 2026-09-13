@@ -3,7 +3,7 @@ const yearsData = [
   { num: 1, title: "Music Altar & Songbook", cat: "music-art", path: "years/year-01-music-altar/index.html", ready: true, desc: "Altar interactivo estilo Yandere Sim y diario emocional K-pop/C-pop/J-pop." },
   { num: 2, title: "Sitio Web Babymetal", cat: "music-art", path: "years/year-02-babymetal/index.html", ready: true, desc: "Landing tributo a BABYMETAL con estética Kawaii Metal & Gothic Idol." },
   { num: 3, title: "Geometría en Movimiento", cat: "code-math", path: "years/year-03-fractal-dance/index.html", ready: true, desc: "Laboratorio de fractales, matemática y geometría tras el Ballet, Hip-Hop y Afro." },
-  { num: 4, title: "Laboratorio del Té", cat: "gaming-sim", path: "#", ready: false, desc: "Mezclas relajantes de té, botánica pixelada y paletas cromáticas." },
+  { num: 4, title: "Laboratorio del Té", cat: "gaming-sim", path: "#", ready: true, desc: "Mezclas relajantes de té, botánica pixelada y paletas cromáticas." },
   { num: 5, title: "Tamagotchi Virtual", cat: "gaming-sim", path: "#", ready: false, desc: "Mascota virtual retro interactiva para cuidar en el navegador." },
   { num: 6, title: "Hanzi Flashcards & Guochao", cat: "culture-fandom", path: "#", ready: false, desc: "Flashcards interactivas de caracteres chinos con estética tradicional-moderna." },
   { num: 7, title: "Terminal OSINT Simulación", cat: "code-math", path: "#", ready: false, desc: "Juego de investigación en terminal cyberpunk e ingreso de comandos." },

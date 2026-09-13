@@ -1,0 +1,231 @@
+:root {
+  --device-case: #ff6b81;
+  --device-accent: #371b58;
+  --lcd-bg: #879f53;
+  --lcd-pixel: #1e290f;
+  --lcd-pixel-light: #6a823a;
+}
+
+body {
+  background-color: #120b1d;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 50% 30%, #2a1647 0%, #0c0714 90%);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(12, 7, 20, 0.9);
+  border-bottom: 2px solid var(--device-case);
+}
+
+.back-link {
+  color: var(--device-case);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.year-badge {
+  background: var(--device-case);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.gameboy-wrapper {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tamagotchi-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.tamagotchi-header h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ff85a2;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #a78bfa;
+  font-size: 0.9rem;
+}
+
+/* Consola Física */
+.virtual-device {
+  background: var(--device-case);
+  border: 6px solid #d6335c;
+  border-radius: 40px 40px 60px 60px;
+  padding: 2rem 1.8rem;
+  width: 310px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 5px 10px rgba(255,255,255,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.device-brand {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: var(--device-accent);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Pantalla LCD Retro */
+.lcd-screen {
+  background: var(--lcd-bg);
+  border: 5px solid #2d371d;
+  border-radius: 12px;
+  width: 100%;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  color: var(--lcd-pixel);
+  font-family: 'VT323', monospace;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.lcd-screen.sleeping {
+  background: #2a3818;
+  filter: brightness(0.7);
+}
+
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px dashed var(--lcd-pixel-light);
+}
+
+.status-icon {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.status-icon.active {
+  opacity: 1;
+}
+
+.pet-stage {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pet-avatar {
+  font-size: 3.5rem;
+  animation: bounce 1s infinite alternate ease-in-out;
+  user-select: none;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.poop-element {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.poop-element.visible {
+  display: block;
+}
+
+.status-bubble {
+  position: absolute;
+  top: 5px;
+  background: var(--lcd-pixel);
+  color: var(--lcd-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Barras de Estado */
+.metrics-panel {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar-container {
+  width: 120px;
+  height: 10px;
+  background: var(--lcd-pixel-light);
+  border: 1px solid var(--lcd-pixel);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--lcd-pixel);
+  width: 100%;
+  transition: width 0.4s ease;
+}
+
+/* Botones */
+.button-pad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.tama-btn {
+  background: #371b58;
+  border: none;
+  border-bottom: 4px solid #1f0d33;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.1s, border 0.1s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.tama-btn:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.45rem;
+}

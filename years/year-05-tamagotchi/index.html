@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Año 05 - Tamagotchi Virtual Retro</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes Retro / Pixel Art -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="../../index.html" class="back-link">← Volver a la Nave Central (Año 22)</a>
+    <span class="year-badge">AÑO 05 / 22</span>
+  </nav>
+
+  <main class="gameboy-wrapper">
+    
+    <header class="tamagotchi-header">
+      <h1>Pixel Companion v1.0</h1>
+      <p class="subtitle">Cuida a tu compañero digital pixelado en tiempo real</p>
+    </header>
+
+    <!-- Consola Virtual -->
+    <div class="virtual-device">
+      <div class="device-brand">CYBER-PET 1998</div>
+
+      <!-- Pantalla LCD -->
+      <div class="lcd-screen" id="lcdScreen">
+        <!-- Barra Superior de Íconos -->
+        <div class="screen-header">
+          <span class="status-icon" id="iconHunger" title="Hambre">🍗</span>
+          <span class="status-icon" id="iconPlay" title="Diversión">⚽</span>
+          <span class="status-icon" id="iconSleep" title="Sueño">💤</span>
+          <span class="status-icon" id="iconClean" title="Higiene">🧹</span>
+        </div>
+
+        <!-- Escenario y Mascota -->
+        <div class="pet-stage">
+          <div class="poop-element" id="poopDisplay">💩</div>
+          <div class="pet-avatar" id="petAvatar">👾</div>
+          <div class="status-bubble" id="statusBubble">¡Hola!</div>
+        </div>
+
+        <!-- Barras de Métricas -->
+        <div class="metrics-panel">
+          <div class="metric-row">
+            <span>HAMBRE</span>
+            <div class="bar-container"><div class="bar-fill" id="barHunger"></div></div>
+          </div>
+          <div class="metric-row">
+            <span>ANIMO</span>
+            <div class="bar-container"><div class="bar-fill" id="barHappy"></div></div>
+          </div>
+          <div class="metric-row">
+            <span>ENERGÍA</span>
+            <div class="bar-container"><div class="bar-fill" id="barEnergy"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones Físicos de la Consola -->
+      <div class="button-pad">
+        <button class="tama-btn btn-a" onclick="feedPet()">
+          <span class="btn-label">COMER</span>
+        </button>
+        <button class="tama-btn btn-b" onclick="playWithPet()">
+          <span class="btn-label">JUGAR</span>
+        </button>
+        <button class="tama-btn btn-c" onclick="toggleSleep()">
+          <span class="btn-label">DORMIR</span>
+        </button>
+        <button class="tama-btn btn-d" onclick="cleanPet()">
+          <span class="btn-label">LIMPIAR</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="../../assets/js/jelly.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
